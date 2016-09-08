@@ -13,7 +13,7 @@ done
 
 # symlink binaries into /usr/local/bin
 files=bin/*
-for file in files
+for file in $files
 do
     ln -sf $basepath/$file /usr/local/bin
 done
