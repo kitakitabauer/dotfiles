@@ -143,7 +143,7 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)"
     \ : "\<TAB>"
-let g:neosnippet#snippets_directory = '~/snippets, /Users/a12121/src/github.com/yukidarake/vim-go/gosnippets/snippets/'
+let g:neosnippet#snippets_directory = '~/.snippets'
 let g:neosnippet#disable_runtime_snippets = {
       \ 'javascript' : 1,
       \ }
