@@ -18,7 +18,7 @@ done
   for file in .zsh/.*
   do
     if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
-      ln -sf $basepath/$file ~/.zsh
+      ln -sfv $basepath/$file ~/.zsh/
     fi
   done
 #fi
@@ -30,7 +30,7 @@ done
   for file in .snippets/*
   do
     if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
-      ln -sf $basepath/$file ~/.snippets
+      ln -sfv $basepath/$file ~/.snippets/
     fi
   done
 #fi
