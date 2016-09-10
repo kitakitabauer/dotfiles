@@ -15,22 +15,14 @@ done
 if [ ! -d ~/.zsh ] ; then
   ln -s $bashpath/.zsh ~
 else
-  files=.zsh/*
-  for file in $files
-  do
-    ln -sf $basepath/$file ~/.zsh/
-  done
+  ln -sf $basepath/.zsh/* ~/.zsh/
 fi
 
 # symlink snippets into ~/.snippets
 if [ ! -d ~/.snippets ] ; then
   ln -s $basepath/.snippets ~
 else
-  files=.snippets/*
-  for file in $files
-  do
-    ln -sf $basepath/$file ~/.snippets/
-  done
+  ln -sf $basepath/.snippets/* ~/.snippets/
 fi
 
 # symlink binaries into /usr/local/bin
