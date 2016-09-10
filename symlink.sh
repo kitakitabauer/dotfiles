@@ -12,13 +12,20 @@ do
 done
 
 # symlink zsh configuration files into ~/.zsh
-ln -sf $bashpath/.zsh ~
+if [ ! -d ~/.zsh ] ; then
+  mkdir ~/.zsh
+fi
+for file in .zsh/.*
+do
+  if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
+    ln -sf $basepath/$file ~/.zsh/
+  fi
+done
 
 # symlink snippets into ~/.snippets
 if [ ! -d ~/.snippets ] ; then
   mkdir ~/.snippets
 fi
-
 for file in .snippets/*
 do
   if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
