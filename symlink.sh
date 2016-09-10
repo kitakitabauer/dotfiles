@@ -12,24 +12,28 @@ do
 done
 
 # symlink zsh configuration files into ~/.zsh
-if [ ! -d ~/.zsh ] ; then
-  ln -s $bashpath/.zsh ~
-else
+#if [ ! -d ~/.zsh ] ; then
+#  ln -s $bashpath/.zsh ~
+#else
   for file in .zsh/.*
   do
-    ln -sf $basepath/$file ~/.zsh/
+    if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
+      ln -sf $basepath/$file ~/.zsh
+    fi
   done
-fi
+#fi
 
 # symlink snippets into ~/.snippets
-if [ ! -d ~/.snippets ] ; then
-  ln -s $basepath/.snippets ~
-else
+#if [ ! -d ~/.snippets ] ; then
+#  ln -s $basepath/.snippets ~
+#else
   for file in .snippets/*
   do
-    ln -sf $basepath/$file ~/.snippets/
+    if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
+      ln -sf $basepath/$file ~/.snippets
+    fi
   done
-fi
+#fi
 
 # symlink binaries into /usr/local/bin
 files=bin/*
