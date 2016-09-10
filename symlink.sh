@@ -6,7 +6,7 @@ basepath=$(cd $(dirname $0);pwd)
 files=.*
 for file in $files
 do
-  if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
+  if [ ! -d $file -a $file != "." -a $file != ".." -a $file != ".git" ] ; then
     ln -sf $basepath/$file ~
   fi
 done
@@ -15,14 +15,20 @@ done
 if [ ! -d ~/.zsh ] ; then
   ln -s $bashpath/.zsh ~
 else
-  ln -sf $basepath/.zsh/* ~/.zsh/
+  for file in .zsh/*
+  do
+    ln -sf $basepath/$file ~/.zsh/
+  done
 fi
 
 # symlink snippets into ~/.snippets
 if [ ! -d ~/.snippets ] ; then
   ln -s $basepath/.snippets ~
 else
-  ln -sf $basepath/.snippets/* ~/.snippets/
+  for file in .snippets/*
+  do
+    ln -sf $basepath/$file ~/.snippets/
+  done
 fi
 
 # symlink binaries into /usr/local/bin
