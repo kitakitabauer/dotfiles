@@ -15,7 +15,7 @@ done
 if [ ! -d ~/.zsh ] ; then
   ln -s $bashpath/.zsh ~
 else
-  for file in .zsh/*
+  for file in .zsh/.*
   do
     ln -sf $basepath/$file ~/.zsh/
   done
