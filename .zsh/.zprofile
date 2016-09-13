@@ -41,6 +41,8 @@ alias ag='ag --nogroup --nocolor'
 alias f='open .'
 
 alias bashrc='vi ~/.bashrc'
+alias zshenv='vi $ZDOTDIR/.zshenv'
+alias zprofile='vi $ZDOTDIR/.zprofile'
 alias zshrc='vi $ZDOTDIR/.zshrc'
 
 alias vimrc='vi ~/.vimrc'
@@ -49,8 +51,39 @@ alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 
 alias svn-vimdiff='svn diff --diff-cmd svn-vimdiff.sh'
 
-alias gitc='vi ~/.gitconfig'
-alias gitdiff='git difftool --tool=vimdiff --no-prompt'
+# git
+alias gconf='vi ~/.gitconfig'
+
+alias gst='git status --branch'
+alias gba='git branch -a'
+alias gsb='git show-branch'
+alias gc='git commit -v'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias ga='git add'
+alias gm='git merge'
+alias gf='git fetch'
+alias gfr='git fetch && git rebase'
+alias ggpush='git push origin $(current_branch)'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+alias gl='git log --pretty=oneline'
+# diff関連
+alias gd='git diff'
+alias gdm='git diff master'           # masterとのdiff
+alias gdw='git diff --color-words'    # 単語単位でいろつけてdiff
+alias gdc='git diff --cached'         # addされているものとのdiff
+alias gds='git diff --staged'         # 同上(1.6.1移行)
+alias gd1='git diff HEAD~'            # HEADから1つ前とdiff
+alias gd2='git diff HEAD~~'           # HEADから2つ前とdiff
+alias gd3='git diff HEAD~~~'          # HEADから3つ前とdiff
+alias gd4='git diff HEAD~~~~'         # HEADから4つ前とdiff
+alias gd5='git diff HEAD~~~~~'        # HEADから5つ前とdiff
+alias gd10='git diff HEAD~~~~~~~~~~'  # HEADから10前とdiff
+alias gdfv='git difftool --tool=vimdiff --no-prompt'
+
+# リポジトリを参照
+alias see='hub browse'
 alias gometalinter='gometalinter --fast'
 
 # C で標準出力をクリップボードにコピーする

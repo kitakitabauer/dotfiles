@@ -5,6 +5,28 @@ export GREP_OPTIONS='--color=none'
 export GIT_MERGE_AUTOEDIT=no
 export XDG_CONFIG_HOME=~/.config
 
+if (( $+commands[go] )); then
+  export GOPATH=$HOME/go
+  path+=(
+    $GOPATH/bin
+    (go env GOROOT)/bin
+  )
+fi
+
+if (( $+commands[nodebrew] )); then
+  path+=($HOME/.nodebrew/current/bin)
+fi
+
+# python, perl, ruby, perl6
+for xenv in pyenv plenv rbenv rakudobrew; do
+  if (( $+commands[$xenv] )); then
+    path=($($xenv root)/shims $path)
+    eval "$(SHELL=zsh $xenv init - --no-rehash)"
+  fi
+done
+
+path+=(./node_modules/bin)
+
 # history
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -13,7 +35,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
-HISTFILE=~/.zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=16384
 SAVEHIST=16384
 LISTMAX=1000
