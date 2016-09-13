@@ -1,42 +1,21 @@
+# .zshrc更新時にコンパイルして読み込み高速化
+if [ ! -f $ZDOTDIR/.zshrc -o $ZDOTDIR/.zshrc -nt $ZDOTDIR/.zshrc.zwc ] ; then
+  zcompile $ZDOTDIR/.zshrc
+fi
+
 # Lines configured by zsh-newuser-install
 autoload -U colors && colors
 PROMPT="[%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}] %{$fg_no_bold[yellow]%}%3~ %{$reset_color%}%# "
 RPROMPT="%* [%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename '$ZDOTDIR/.zshrc'
 autoload -Uz compinit
 compinit
 
 
 bindkey -e
 stty stop undef
-
-# alias
-alias g=git
-alias vi=vim
-alias nv=nvim
-alias vimdiff='vim -dO'
-alias view='vim -R'
-alias gitdiff='git difftool --tool=vimdiff --no-prompt'
-alias v='vim -'
-alias ls='ls -G'
-alias ll='ls -ahl'
-alias l='ls -al'
-alias ltr='ls -ltr'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias less='less -R'
-alias tmux='tmux -2'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias diff='diff --exclude=".svn"'
-alias ag='ag -S --nogroup --nocolor'
-alias vman='vs man'
-alias gometalinter='gometalinter --fast'
 
 # 補完時に大小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -48,10 +27,10 @@ setopt list_ambiguous
 setopt autopushd
 setopt auto_cd
 
-
 # include
 [ -f ~/.zshrc.mine ] && . ~/.zshrc.mine
 [ -f ~/.zshrc.zgen ] && . ~/.zshrc.zgen
+
 
 # functions
 function peco-src () {
@@ -64,6 +43,11 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# zman 調べたい単語 という風に使う
+function zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
 
 moshx() {
   SSHX_COMMAND=mosh sshx $@

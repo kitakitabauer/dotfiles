@@ -1,7 +1,11 @@
 alias zmv='noglob zmv -W'
 
+alias g=git
+alias vi=vim
+alias nv=nvim
+
 alias ls='ls -G'
-alias ll='ls -ltr'
+alias ll='ls -ahl'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -21,13 +25,13 @@ alias -g V='| vim -R -'
 
 # coreutils
 brew_prefix=`brew --prefix`
-alias base64="$brew_prefix/bin/gbase64"
-alias basename="$brew_prefix/bin/gbasename"
-alias cat="$brew_prefix/bin/gcat"
-alias chcon="$brew_prefix/bin/gchcon"
-alias chgrp="$brew_prefix/bin/gchgrp"
-alias chmod="$brew_prefix/bin/gchmod"
-alias chown="$brew_prefix/bin/gchown"
+alias base64='$brew_prefix/bin/gbase64'
+alias basename='$brew_prefix/bin/gbasename'
+alias cat='$brew_prefix/bin/gcat'
+alias chcon='$brew_prefix/bin/gchcon'
+alias chgrp='$brew_prefix/bin/gchgrp'
+alias chmod='$brew_prefix/bin/gchmod'
+alias chown='$brew_prefix/bin/gchown'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -37,16 +41,17 @@ alias ag='ag --nogroup --nocolor'
 alias f='open .'
 
 alias bashrc='vi ~/.bashrc'
-alias zshrc='vi ~/dotfiles/.zshrc'
-alias ohmyzsh='~/.oh-my-zsh'
+alias zshrc='vi $ZDOTDIR/.zshrc'
 
 alias vimrc='vi ~/.vimrc'
+alias vimdiff='vim -dO'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 
 alias svn-vimdiff='svn diff --diff-cmd svn-vimdiff.sh'
 
-alias g='git'
 alias gitc='vi ~/.gitconfig'
+alias gitdiff='git difftool --tool=vimdiff --no-prompt'
+alias gometalinter='gometalinter --fast'
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1

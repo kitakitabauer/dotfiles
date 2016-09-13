@@ -38,4 +38,3 @@ setopt hist_reduce_blanks  # 余分なスペースを削除してヒストリに
 setopt magic_equal_subst   # コマンドラインの引数で--prefix=/usr などの = 以降でも補完できる
 # 補完時にヒストリを自動的に展開する。
 setopt hist_expand
-
