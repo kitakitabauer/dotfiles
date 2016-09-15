@@ -44,6 +44,21 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
+function peco-src-remote () {
+  local selected_repo=$(ghq list -p | peco --query "$LBUFFER" | rev | cut -d "/" -f -2 | rev)
+  echo $selected_repo
+  if [ -n "$selected_repo" ]; then
+    BUFFER="hub browse ${selected_repo}"
+    # pecoで選択中, Enter を押した瞬間に実行する
+    zle accept-line
+  fi
+  zle clear-screen
+}
+
+# 関数をウィジェットに登録
+zle -N peco-src-remote
+bindkey '^^' peco-src-remote
+
 # zman 調べたい単語 という風に使う
 function zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
