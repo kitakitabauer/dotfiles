@@ -25,6 +25,7 @@
   editor = vim
   excludesfile = ~/.gitignore_global
 [ghq]
+  root = ~/.ghq
   root = ~/go/src
 [merge]
   ff = false

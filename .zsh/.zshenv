@@ -53,8 +53,6 @@ setopt inc_append_history
 setopt share_history
 # C-sでのヒストリ検索が潰されてしまうため、出力停止・開始用にC-s/C-qを使わない。
 setopt no_flow_control
-# zshプロセス間でヒストリを共有する。
-setopt share_history
 setopt hist_no_store       # ヒストリにhistoryコマンドを記録しない
 setopt hist_reduce_blanks  # 余分なスペースを削除してヒストリに記録
 setopt magic_equal_subst   # コマンドラインの引数で--prefix=/usr などの = 以降でも補完できる
