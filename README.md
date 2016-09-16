@@ -4,7 +4,7 @@
 ```bash
 # clone me
 $ cd ~
-$ git clone git@github.com:kitakitabuer/dotfiles3.git
+$ git clone git@github.com:kitakitabuer/dotfiles.git
 $ cd dotfiles
 
 # install dotfiles
