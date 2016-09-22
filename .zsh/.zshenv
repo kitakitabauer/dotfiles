@@ -7,10 +7,7 @@ export XDG_CONFIG_HOME=~/.config
 
 if (( $+commands[go] )); then
   export GOPATH=$HOME/go
-  path+=(
-    $GOPATH/bin
-    (go env GOROOT)/bin
-  )
+  path+=($GOPATH/bin)
 fi
 
 if (( $+commands[nodebrew] )); then
