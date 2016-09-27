@@ -5,6 +5,11 @@ export GREP_OPTIONS='--color=none'
 export GIT_MERGE_AUTOEDIT=no
 export XDG_CONFIG_HOME=~/.config
 
+path=(
+  /usr/local/bin(N-/)
+  $path
+)
+
 if (( $+commands[go] )); then
   export GOPATH=$HOME/go
   path+=($GOPATH/bin)
