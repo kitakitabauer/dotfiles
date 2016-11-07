@@ -4,6 +4,8 @@ export TERM=xterm-256color
 export GREP_OPTIONS='--color=none'
 export GIT_MERGE_AUTOEDIT=no
 export XDG_CONFIG_HOME=~/.config
+export LESS='-g -i -M -R -S -W -z-4 -x4'
+export PAGER=less
 
 path=(
   /usr/local/bin(N-/)
