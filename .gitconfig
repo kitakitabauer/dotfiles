@@ -4,13 +4,14 @@
   name = kitakitabauer
   email = kitakita.d.kitakita@gmail.com
   useconfigonly = true
+[url "git@github.com:"]
+  pushInsteadOf = git://github.com/
+  pushInsteadOf = https://github.com/
+[url "git://github.com/"]
+  insteadOf = https://github.com/
 [user "ssh://git@ghe.ca-tools.org/"]
   name = Kitahara Yuki
   email = kitahara_yuki@cyberagent.co.jp
-[url "https://"]
-  insteadOf = git://
-[url "git@github.com:"]
-  pushInsteadOf = git://github.com/
 [user "https://ghe.ca-tools.org/"]
   name = Kitahara Yuki
   email = kitahara_yuki@cyberagent.co.jp
