@@ -9,6 +9,7 @@
   email = kitahara_yuki@cyberagent.co.jp
 [url "git@github.com:"]
   insteadOf = https://github.com/
+  pushInsteadOf = git://github.com/
 [user "https://ghe.ca-tools.org/"]
   name = Kitahara Yuki
   email = kitahara_yuki@cyberagent.co.jp
