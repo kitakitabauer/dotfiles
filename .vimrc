@@ -366,6 +366,10 @@ let g:go_fmt_fail_silently = 1 " use syntasitic to check errors
 let g:go_play_open_browser = 0
 let g:go_snippet_engine = 'neosnippet'
 
+" terraform
+Plug 'hashivim/vim-terraform'
+let g:terraform_fmt_on_save = 1
+
 
 call plug#end()
 
