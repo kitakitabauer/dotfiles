@@ -60,6 +60,20 @@ function peco-src-remote () {
 zle -N peco-src-remote
 bindkey '^^' peco-src-remote
 
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+bindkey '^s' pet-select
+
+
 # zman 調べたい単語 という風に使う
 function zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
