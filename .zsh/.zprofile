@@ -14,7 +14,6 @@ alias sed='gsed'
 alias tmux='tmux -2'
 alias view='vim -R'
 alias v='vim -'
-alias ag='ag --nogroup --nocolor'
 # ページャーを使いやすくする
 alias -g G='| grep'
 alias -g H='| head'
@@ -37,7 +36,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias diff='diff --exclude=".svn"'
-alias ag='ag --nogroup --nocolor'
 alias f='open .'
 
 alias bashrc='vi ~/.bashrc'
@@ -48,8 +46,6 @@ alias zshrc='vi $ZDOTDIR/.zshrc'
 alias vimrc='vi ~/.vimrc'
 alias vimdiff='vim -dO'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-
-alias svn-vimdiff='svn diff --diff-cmd svn-vimdiff.sh'
 
 # git
 alias gconf='vi ~/.gitconfig'
