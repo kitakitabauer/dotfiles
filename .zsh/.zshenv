@@ -6,6 +6,7 @@ export GIT_MERGE_AUTOEDIT=no
 export XDG_CONFIG_HOME=~/.config
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 export PAGER=less
+export EDITOR=vim
 
 path=(
   /usr/local/bin(N-/)
@@ -30,6 +31,7 @@ for xenv in pyenv plenv rbenv rakudobrew; do
 done
 
 path+=(./node_modules/bin)
+path+=(/usr/local/opt/maven@3.2/bin/)
 
 # history
 autoload history-search-end

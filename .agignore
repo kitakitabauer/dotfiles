@@ -6,3 +6,4 @@
 .svn
 node_modules
 vendor
+terraform.tfstate*

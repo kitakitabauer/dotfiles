@@ -1,14 +1,14 @@
 [init]
   templatedir = ~/.git_templates/
 [user]
-  name = kitakitabauer
-  email = kitakita.d.kitakita@gmail.com
+	name = kitakitabauer
+	email = kitakita.d.kitakita@gmail.com
   useconfigonly = true
-[url "git@github.com:"]
-  pushInsteadOf = git://github.com/
-  pushInsteadOf = https://github.com/
-[url "git://github.com/"]
-  insteadOf = https://github.com/
+# [url "git@github.com:"]
+#   pushInsteadOf = git://github.com/
+#   pushInsteadOf = https://github.com/
+# [url "git://github.com/"]
+#   insteadOf = https://github.com/
 [user "ssh://git@ghe.ca-tools.org/"]
   name = Kitahara Yuki
   email = kitahara_yuki@cyberagent.co.jp
@@ -16,7 +16,7 @@
   name = Kitahara Yuki
   email = kitahara_yuki@cyberagent.co.jp
 [credential]
-  helper = osxkeychain
+	helper = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/credential/netrc/git-credential-netrc
 [color]
   ui = auto
   status = auto
