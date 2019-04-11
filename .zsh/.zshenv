@@ -32,6 +32,7 @@ done
 
 path+=(./node_modules/bin)
 path+=(/usr/local/opt/maven@3.2/bin/)
+path+=(/usr/local/opt/mongodb@3.4/bin)
 
 # history
 autoload history-search-end

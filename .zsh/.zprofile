@@ -42,6 +42,8 @@ alias bashrc='vi ~/.bashrc'
 alias zshenv='vi $ZDOTDIR/.zshenv'
 alias zprofile='vi $ZDOTDIR/.zprofile'
 alias zshrc='vi $ZDOTDIR/.zshrc'
+alias zshrc.include='vi ~/.zshrc.mine'
+alias zshrc.mine='vi ~/.zshrc.mine'
 
 alias vimrc='vi ~/.vimrc'
 alias vimdiff='vim -dO'
