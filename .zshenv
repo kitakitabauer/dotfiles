@@ -10,11 +10,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/apache-cassandra-1.2.9/bin"
 
 export PATH="$PATH:$HOME/bin"
-
-source /home/ec2-user/.gimme-aws-creds-xaws
 
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
