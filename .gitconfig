@@ -1,53 +1,14 @@
-[init]
-  templatedir = ~/.git_templates/
-[user]
-	name = kitakitabauer
-	email = kitakita.d.kitakita@gmail.com
-  useconfigonly = true
-# [url "git@github.com:"]
-#   pushInsteadOf = git://github.com/
-#   pushInsteadOf = https://github.com/
-# [url "git://github.com/"]
-#   insteadOf = https://github.com/
-[user "ssh://git@ghe.ca-tools.org/"]
-  name = Kitahara Yuki
-  email = kitahara_yuki@cyberagent.co.jp
-[user "https://ghe.ca-tools.org/"]
-  name = Kitahara Yuki
-  email = kitahara_yuki@cyberagent.co.jp
-[credential]
-	helper = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/credential/netrc/git-credential-netrc
-[color]
-  ui = auto
-  status = auto
-  diff = auto
-  branch = auto
-  interactive = auto
-  grep = auto
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore_global
+[url "github:"]
+  InsteadOf = https://github.com/
+  InsteadOf = git@github.com:
+
+[url "git@github.com:"]
+  InsteadOf = https://github.com/
+
 [ghq]
-  root = ~/.ghq
   root = ~/go/src
-[merge]
-  ff = false
+  root = ~/ghq
+[include]
+	path = ~/.gitconfig_shared
 [pull]
-  ff = only
-[difftool "sourcetree"]
-  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-  trustExitCode = true
-[filter "media"]
-  clean = git media clean %f
-  smudge = git media smudge %f
-  required = true
-[filter "hawser"]
-  clean = git hawser clean %f
-  smudge = git hawser smudge %f
-  required = true
-[web]
-  browser = google-chrome
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ff = only

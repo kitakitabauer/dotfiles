@@ -1,0 +1,13 @@
+alias zshenv='vi ~/.zshenv'
+alias zshrc='vi ~/.zshrc'
+alias zprofile='vi ~/.zprofile'
+alias zalias='vi ~/.zalias'
+
+alias gconfig='vi ~/.gitconfig'
+alias vimrc='vi ~/.vimrc'
+alias sshconfig='vi ~/.ssh/config'
+
+alias hb='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+
+alias k="kubectl"
+complete -o default -F __start_kubectl k
